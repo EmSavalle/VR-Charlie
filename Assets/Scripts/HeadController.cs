@@ -17,7 +17,14 @@ public class HeadController : MonoBehaviour
         RaycastHit hit;
         Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
         Debug.DrawRay(transform.position, forward, Color.green);
-        if (Physics.Raycast(transform.position, forward, out hit))
+        /*if (Physics.Raycast(transform.position, forward, out hit))
+        {
+            Detected d = hit.transform.GetComponent<Detected>();
+            if (d)
+            {
+                d.detected();
+            }
+        }else */if(Physics.SphereCast(transform.position,0.5f,transform.forward,out hit,Mathf.Infinity))
         {
             Detected d = hit.transform.GetComponent<Detected>();
             if (d)

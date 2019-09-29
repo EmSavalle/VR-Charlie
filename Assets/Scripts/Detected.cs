@@ -7,8 +7,10 @@ public class Detected : MonoBehaviour {
     public int lookedAtCounter = 0;
     private float lastSeen;
     private int timeUntilReset = 3;
-	// Use this for initialization
-	void Start () {
+    public Material m1;
+    public Material m2;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -17,20 +19,15 @@ public class Detected : MonoBehaviour {
         if (Time.time > lastSeen + timeUntilReset)
         {
             lookedAtCounter = 0;
+            gameObject.GetComponent<MeshRenderer>().material = m1;
         }
-	}
+
+    }
 
     public void detected()
     {
-        if (lookedAtCounter >= timeUntilDetected)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            lastSeen = Time.time;
-            lookedAtCounter += 1;
-        }
-        
+        lastSeen = Time.time;
+        lookedAtCounter += 1;
+        gameObject.GetComponent<MeshRenderer>().material = m2;
     }
 }
