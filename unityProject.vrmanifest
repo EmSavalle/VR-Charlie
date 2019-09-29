@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.vrcharlie.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "G:\\Projets Unity\\VR Charlie\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "VR Charlie [Testing]"
+        }
+      }
+    }
+  ]
+}
